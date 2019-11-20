@@ -53,7 +53,7 @@ ui <- fluidPage(
             }
         });
         '),
-    # Sidebar with a slider input for number of bins 
+    # Sidebar with buttons
     sidebarLayout(
         sidebarPanel(
             width = 2,
@@ -83,13 +83,13 @@ ui <- fluidPage(
                 )
             )
         ),
-    # Show a plot of the generated distribution
+    # Show stage
     mainPanel(
         plotOutput(outputId = "map"))
     )
 )
 
-# Define server logic required to draw a histogram
+# Define server
 server <- function(session, input, output) {
     values <- reactiveValues(
         pos = c(wd / 2L, ht / 2L), 
